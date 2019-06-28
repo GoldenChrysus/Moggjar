@@ -1,5 +1,5 @@
 # Moggjar
-Moggjar is the TEST Alliance Mumble alternative for quadriplegics trying to talk in either general or a whisper channel at once.
+Moggjar is the TEST Alliance alternative for Mumble push-to-talk keys for quadriplegics trying to talk in either general or a whisper channel at once.
 
 ## Installation
 1. Download and install [Java SE 12](https://www.oracle.com/technetwork/java/javase/downloads/jdk12-downloads-5295953.html) for your operating system.
@@ -7,7 +7,7 @@ Moggjar is the TEST Alliance Mumble alternative for quadriplegics trying to talk
 3. Run the JAR file.
 
 ## Mumble Setup
-Your Mumble needs to use the keys as specified in the TEST Wiki Mumble setup. This includes the keys for local, speak upwards, speak downwards, and fleet. The key bindings are currently hard-coded as follows:
+Your Mumble needs to use the keys as specified in the TEST Wiki Mumble setup. This includes the keys for local, speak upwards, speak downwards, and fleet. Note: if you don't need a certain key (usually the speak downwards key), you don't need to configure it in Mumble; just be sure to not use the corresponding button in this tool. The key bindings are currently hard-coded as follows:
 * Local: page down
 * Speak upwards: page up
 * Fleet: numpad *
@@ -20,4 +20,4 @@ When making a contribution, please create a fork, make your changes, and make a 
 
 ## To-Do List
 * Features:
-	* Ability to configure Mumble talk buttons including add buttons, remove buttons, and modify keybinds.
+	* Ability to configure Mumble talk buttons including adding buttons, removing buttons, and modifying keybinds.
