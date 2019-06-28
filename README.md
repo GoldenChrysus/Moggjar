@@ -2,7 +2,7 @@
 Moggjar is the TEST Alliance Mumble alternative for quadriplegics trying to talk in either general or a whisper channel at once.
 
 ## Installation
-1. Download and instal [Java SE 12](https://www.oracle.com/technetwork/java/javase/downloads/jdk12-downloads-5295953.html) for your operating system.
+1. Download and install [Java SE 12](https://www.oracle.com/technetwork/java/javase/downloads/jdk12-downloads-5295953.html) for your operating system.
 2. Download the [latest JAR release](https://github.com/GoldenChrysus/Moggjar/releases).
 3. Run the JAR file.
 
