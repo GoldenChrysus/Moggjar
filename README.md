@@ -1,5 +1,5 @@
 # Moggjar
-Moggjar is the TEST Alliance alternative for Mumble push-to-talk keys for quadriplegics trying to talk in either general or a whisper channel at once.
+Moggjar is the TEST Alliance alternative to Mumble push-to-talk keys for quadriplegics trying to talk in either general or a whisper channel at once.
 
 ## Installation
 1. Download and install [Java SE 12](https://www.oracle.com/technetwork/java/javase/downloads/jdk12-downloads-5295953.html) for your operating system.
