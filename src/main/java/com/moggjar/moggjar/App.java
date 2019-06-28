@@ -77,20 +77,20 @@ public class App {
 		});
 		
 		button_local.addItemListener((ItemEvent ev) -> {
-					toggleKey(ev, KeyEvent.VK_PAGE_DOWN);
-				});
+			toggleKey(ev, KeyEvent.VK_PAGE_DOWN);
+		});
 
 		button_upward.addItemListener((ItemEvent ev) -> {
-					toggleKey(ev, KeyEvent.VK_PAGE_UP);
-				});
+			toggleKey(ev, KeyEvent.VK_PAGE_UP);
+		});
 
 		button_fleet.addItemListener((ItemEvent ev) -> {
-					toggleKey(ev, KeyEvent.VK_MULTIPLY);
-				});
+			toggleKey(ev, KeyEvent.VK_MULTIPLY);
+		});
 
 		button_downward.addItemListener((ItemEvent ev) -> {
-					toggleKey(ev, KeyEvent.VK_SUBTRACT);
-				});
+			toggleKey(ev, KeyEvent.VK_SUBTRACT);
+		});
 	}
 
 	private static void toggleKey(ItemEvent ev, int target_key) {
