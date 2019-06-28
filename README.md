@@ -17,3 +17,7 @@ Your Mumble needs to use the keys as specified in the TEST Wiki Mumble setup. Th
 The project in this repository is an Eclipse Maven project. Please use this project for testing and development in order to maintain consistency of releases. The project currently uses Java SE 12 for compiler compliance, so ensure you have this installed.
 
 When making a contribution, please create a fork, make your changes, and make a pull request back to master. In your pull request, delineate your changes and the purpose of your pull.
+
+## To-Do List
+* Features:
+	* Ability to configure Mumble talk buttons including add buttons, remove buttons, and modify keybinds.
