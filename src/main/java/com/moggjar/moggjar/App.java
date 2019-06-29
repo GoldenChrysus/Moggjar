@@ -12,29 +12,16 @@ import java.nio.file.Path;
 import java.nio.file.Files;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
- 
+
 public class App {
 	private static Robot robot;
+	private static Path settings_path;
 	private static JsonObject settings;
 
 	public static void main(String[] args) throws AWTException, IOException {
-		robot    = new Robot();
-		settings = new JsonObject();
-		
-		String settings_file = "";
-		Path settings_path   = Paths.get("settings.txt");
-		
-		if (Files.exists(settings_path)) {
-			settings_file = Files.readString(settings_path);
-		} else {
-			Files.createFile(settings_path);
-		}
-		
-		if (!settings_file.isEmpty()) {
-			JsonParser parser = new JsonParser();
+		getOrCreateSettings();
 
-			settings = parser.parse(settings_file).getAsJsonObject();
-		}
+		robot = new Robot();
 
 		JFrame mainj                  = new JFrame();
 		JToggleButton button_local    = new JToggleButton("Local (Page Down)");
@@ -66,9 +53,9 @@ public class App {
 			public void windowClosing(WindowEvent e) {
 				settings.addProperty("window_height", mainj.getHeight());
 				settings.addProperty("window_width", mainj.getWidth());
-				
+
 				try {
-					Files.writeString(settings_path, settings.toString());
+					saveSettings();
 				} catch (IOException ex) {
 				}
 
@@ -101,5 +88,28 @@ public class App {
 		} else if (state == ItemEvent.DESELECTED){
 			robot.keyRelease(target_key);
 		}
+	}
+	
+	private static void getOrCreateSettings() throws IOException {
+		settings      = new JsonObject();
+		settings_path = Paths.get("settings.txt");
+		
+		String settings_file = "";
+		
+		if (Files.exists(settings_path)) {
+			settings_file = Files.readString(settings_path);
+		} else {
+			Files.createFile(settings_path);
+		}
+		
+		if (!settings_file.isEmpty()) {
+			JsonParser parser = new JsonParser();
+
+			settings = parser.parse(settings_file).getAsJsonObject();
+		}
+	}
+	
+	private static void saveSettings() throws IOException {
+		Files.writeString(settings_path, settings.toString());
 	}
 }
