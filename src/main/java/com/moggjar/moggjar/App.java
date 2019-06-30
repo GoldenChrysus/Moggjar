@@ -27,6 +27,7 @@ public class App {
 		JToggleButton button_local    = new JToggleButton("Local (Page Down)");
 		JToggleButton button_upward   = new JToggleButton("Upward (Page Up)");
 		JToggleButton button_fleet    = new JToggleButton("Fleet (Numpad *)");
+		// JToggleButton button_fleet    = new JToggleButton("Fleet (Shift + 9)"); // Custom keybind request
 		JToggleButton button_downward = new JToggleButton("Downward (Numpad -)");
 		int window_width              = (settings.has("window_width"))
 				? Integer.parseInt(settings.get("window_width").toString())
@@ -37,22 +38,28 @@ public class App {
 	
 		mainj.setSize(window_width, window_height);
 		mainj.setLayout(new GridLayout(4, 1));
+		mainj.setAlwaysOnTop(true);
 		mainj.add(button_local);
 		mainj.add(button_upward);
 		mainj.add(button_fleet);
 		mainj.add(button_downward);
 		mainj.setVisible(true);
-		mainj.setAlwaysOnTop(true);
 		button_local.setVisible(true);
 		button_upward.setVisible(true);
 		button_fleet.setVisible(true);
 		button_downward.setVisible(true);
+		
+		if (settings.has("window_x") && settings.has("window_y")) {
+			mainj.setLocation(Integer.parseInt(settings.get("window_x").toString()), Integer.parseInt(settings.get("window_y").toString()));
+		}
 
 		mainj.addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent e) {
 				settings.addProperty("window_height", mainj.getHeight());
 				settings.addProperty("window_width", mainj.getWidth());
+				settings.addProperty("window_x", mainj.getX());
+				settings.addProperty("window_y", mainj.getY());
 
 				try {
 					saveSettings();
@@ -73,6 +80,10 @@ public class App {
 
 		button_fleet.addItemListener((ItemEvent ev) -> {
 			toggleKey(ev, KeyEvent.VK_MULTIPLY);
+
+			// Custom keybind request: shift + 9
+			// toggleKey(ev, KeyEvent.VK_SHIFT);
+			// toggleKey(ev, KeyEvent.VK_9);
 		});
 
 		button_downward.addItemListener((ItemEvent ev) -> {
